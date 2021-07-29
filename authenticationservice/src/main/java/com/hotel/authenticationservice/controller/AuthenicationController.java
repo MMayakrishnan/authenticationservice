@@ -52,7 +52,7 @@ public class AuthenicationController {
 	}
 	
 	@GetMapping("/getUserInfo/{registrationId}")
-	public ResponseEntity<User> getUserInfo(int registrationId){
+	public ResponseEntity<User> getUserInfo(@PathVariable int registrationId){
 		User result=authService.getuserInfo(registrationId);
 		return new ResponseEntity<User>(result,HttpStatus.OK);
 	}
